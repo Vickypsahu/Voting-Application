@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin home page</title>
+<link rel="stylesheet" 
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+			 <h1>Vote Results</h1>
+    <table>
+        <tr>
+            <th>Candidate</th>
+            <th>Vote Count</th>
+        </tr>
+        <tr th:each="entry : ${candidateVoteCounts}">
+            <td th:text="${entry.key.name}"></td>
+            <td th:text="${entry.value}"></td>
+        </tr>
+    </table>
+			
+			<a class="btn btn-primary" th:href="@{/logout}" style="width: 20%;">Logout</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

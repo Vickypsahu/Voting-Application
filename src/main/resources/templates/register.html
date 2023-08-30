@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration page</title>
+<link rel="stylesheet" 
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+		<form th:action="@{/api/insert}" method="post">
+			<h2 style="text-align: center;">Registration</h2>
+			<p th:text="${msg}" style="color: red;"></p>
+			<div class="form-group">
+				<input type="text" class="form-control" name="username" placeholder="Username" title="Please enter Username" required/>
+			</div>
+			
+			<div class="form-group">
+				<input type="password" class="form-control" name="password" placeholder="Password" title="Please enter password" required/>
+			</div>
+			
+			
+			<div class="form-group">
+				<input type="email" class="form-control" name="email" placeholder="Email Id" title="Please enter email or enter in valid format" required/>
+			</div>
+			
+			<div class="form-group">
+				<input type="tel" class="form-control"  minlength="10" maxlength="10" name="phone" placeholder="Phone No." title="Please enter 10 digit number" required/>
+			</div>
+			
+			
+			<div class="form-group" style="display: inline-block;">
+				<input type="submit" value="Register" class="btn btn-success" />
+			</div>
+			
+			<div class="form-group" style="display: inline-block;">
+				<a class="btn btn-primary" th:href="@{/api/login}">Login</a>
+			</div>
+			
+		</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
